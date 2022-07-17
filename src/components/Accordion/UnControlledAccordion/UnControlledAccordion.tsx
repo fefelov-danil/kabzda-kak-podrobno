@@ -1,4 +1,5 @@
 import React, {useReducer} from "react";
+import s from './UnControlledAccordion.module.css'
 import {reducer} from "./reducer";
 
 export type UnControlledAccordionPropsType = {
@@ -19,7 +20,7 @@ export function UnControlledAccordion(props: UnControlledAccordionPropsType ) {
     const [accordionMode, dispatch] = useReducer(reducer, state)
 
     return (
-        <div>
+        <div className={s.accordion}>
             <UnControlledAccordionTitle
                 title={props.titleValue}
                 callBack={ () => dispatch({type: "TOGGLE-COLLAPSED"}) }

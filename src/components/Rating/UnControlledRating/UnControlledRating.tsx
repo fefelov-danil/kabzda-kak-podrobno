@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {RatingValueType} from "../../App";
+import s from './UnControlledRating.module.css'
+import {RatingValueType} from "../../../pages/Ratings";
 
 export type UnControlledRatingPropsType = {
     defaultRating: RatingValueType
@@ -8,7 +9,7 @@ export type UnControlledRatingPropsType = {
 export function UnControlledRating(props: UnControlledRatingPropsType) {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(props.defaultRating ? props.defaultRating : 0 )
     return (
-        <div>
+        <div className={s.rating}>
             <Star selected={1 <= ratingValue} setRatingValue={ () => setRatingValue(1) }/>
             <Star selected={2 <= ratingValue} setRatingValue={ () => setRatingValue(2) }/>
             <Star selected={3 <= ratingValue} setRatingValue={ () => setRatingValue(3) }/>

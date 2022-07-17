@@ -1,0 +1,116 @@
+.clocks {
+    position: relative;
+    min-height: calc(100vh - 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #091921;
+}
+/* переключатель */
+.switcher {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.switcher span {
+    display: inline-block;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 12px 15px;
+    border: 2px solid #9b9b9b;
+}
+.switcher span:first-of-type {
+    border-right: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.switcher span:last-of-type {
+    border-left: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.switcher.on span:first-of-type {
+    background: #27FF82;
+    border-color: #27FF82;
+    color: #000;
+}
+.switcher.off span:last-of-type {
+    background: #FF2773;
+    border-color: #FF2773;
+}
+/* Стрелочные часы */
+.analogClocks {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    background: #0F2835;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+    border: 2px solid #0C202B;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.analogClocks .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.analogClocks .clockHand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(0deg) translate(-50%, -50%);
+    transform-origin: 0 0;
+}
+.analogClocks .clockHand:before {
+    content: '';
+    position: absolute;
+}
+.analogClocks .secondHand {
+    width: 90%;
+    height: 90%;
+}
+.analogClocks .secondHand:before {
+    top: 0;
+    right: calc(50% - 1px);
+    width: 2px;
+    height: calc(50% + 50px);
+    background: #fff;
+}
+.analogClocks .minuteHand {
+    width: 80%;
+    height: 80%;
+}
+.analogClocks .minuteHand:before {
+    top: 0;
+    right: calc(50% - 4px);
+    width: 8px;
+    height: calc(50% + 30px);
+    background: #27FF82;
+    border-radius: 5px;
+}
+.analogClocks .hoursHand {
+    width: 60%;
+    height: 60%;
+}
+.analogClocks .hoursHand:before {
+    top: 0;
+    right: calc(50% - 8px);
+    width: 16px;
+    height: calc(50% + 20px);
+    background: #4B3BC4;
+    border-radius: 15px;
+}
+/* Цифровые часы */
+.digitalClock span {
+    font-size: 250px;
+    color: #9AFF27;
+    text-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+}

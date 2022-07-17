@@ -1,4 +1,5 @@
 import React, {useMemo, useState} from 'react';
+import s from '../../../styles/Container.module.css'
 
 export const Memo = () => {
 
@@ -27,7 +28,7 @@ export const Memo = () => {
     }
 
     return (
-        <div>
+        <div className={s.container}>
             <input value={a} onChange={(e) => setA(+e.currentTarget.value)}/>
             <input value={b} onChange={(e) => setB(+e.currentTarget.value)}/>
             <div>Result a: {resultA}</div>

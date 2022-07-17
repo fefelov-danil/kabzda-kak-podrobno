@@ -1,0 +1,8 @@
+.container {
+    width: max-content;
+    margin: 40px auto;
+}
+.link {
+    font-size: 20px;
+    text-decoration: underline;
+}

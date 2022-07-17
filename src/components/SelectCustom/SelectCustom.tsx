@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import './SelectCustom.css'
+import s from './SelectCustom.module.css'
+
+import './SelectCustom.module.css'
 
 type itemsType = {
     id: string
@@ -49,22 +51,22 @@ export const SelectCustom = (props: SelectCustomPropsType) => {
 
     return (
         <div
-            className={toggle ? "select_custom active" : "select_custom"}
+            className={toggle ? s.select_custom + ' ' + s.active : s.select_custom}
             onClick={toggleHandler}
             tabIndex={0}
             onKeyDown={(e) => onKeyDownChangeHover(e.key)}
             onBlur={blurHandler}>
-            <div className={"element main_element"}>
+            <div className={s.element + ' ' + s.main_element}>
                 {selectedItem.value}<span>&#9660;</span>
             </div>
-            <div className={"all_elements"}>
+            <div className={s.all_elements}>
                 {
                     props.items.map((i, index) => {
                         return toggle
                             ? (
                                 <div
                                     key={i.id}
-                                    className={hoverEl.id === i.id ? "element hover" : "element"}
+                                    className={hoverEl.id === i.id ? s.element + ' ' + s.hover : s.element}
                                     onMouseEnter={() => setHoverEl(i)}
                                     onClick={() => changeCurrentElement(i)}>
                                     {i.value}

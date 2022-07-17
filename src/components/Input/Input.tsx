@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import s from '../../styles/Container.module.css'
 
 export type InputPropsType = {
     onChangeInput?: (value: string) => void
@@ -13,10 +14,13 @@ export const Input = (props: InputPropsType) => {
         props.onChangeInput && props.onChangeInput(value)
     }
     return (
-        <input
-            value={value}
-            placeholder={props.placeholder && props.placeholder}
-            title={props.title && props.title}
-            onChange={(e) => onChangeHandler(e.currentTarget.value)}/>
+        <div className={s.container}>
+            <input
+                value={value}
+                placeholder={props.placeholder && props.placeholder}
+                title={props.title && props.title}
+                onChange={(e) => onChangeHandler(e.currentTarget.value)}/>
+        </div>
+
     );
 };

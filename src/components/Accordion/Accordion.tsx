@@ -1,4 +1,5 @@
 import React from "react";
+import s from './Accordion.module.css'
 import {AccordionTitle} from "./AccordionTitle";
 import {AccordionBody} from "./AccordionBody";
 
@@ -21,7 +22,7 @@ export type AccordionPropsType = {
 
 export function Accordion(props: AccordionPropsType) {
 
-    return <div>
+    return <div className={s.accordion}>
         <AccordionTitle title={props.titleValue} changeCollapsed={props.changeCollapsed} />
         {!props.accordionControlled
             ? <AccordionBody items={props.items} onClick={props.onClick}/>

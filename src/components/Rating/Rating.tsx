@@ -1,14 +1,16 @@
 import React from "react";
+import {RatingValueType} from "../../pages/Ratings";
+import s from "./Rating.module.css";
 
 type RatingPropsType = {
-    value: number
-    setRatingValue: (value: number) => void
+    value: RatingValueType
+    setRatingValue: (value: RatingValueType) => void
 }
 
-export function Rating(props:RatingPropsType) {
+export function Rating(props: RatingPropsType) {
 
     return (
-        <div>
+        <div className={s.rating}>
             <Star selected={1 <= props.value} setRatingControlled={ () => props.setRatingValue(1) }/>
             <Star selected={2 <= props.value} setRatingControlled={ () => props.setRatingValue(2) }/>
             <Star selected={3 <= props.value} setRatingControlled={ () => props.setRatingValue(3) }/>

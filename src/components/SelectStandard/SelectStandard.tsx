@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import s from './Selectes.module.css'
 
 type itemsType = {
     item: string
@@ -18,14 +19,17 @@ export const SelectStandard = (props: SelectPropsType) => {
         props.onChangeSelect && props.onChangeSelect(value)
     }
     return (
-        <select value={value} onChange={(e) => onChangeHandler(e.currentTarget.value)}>
-            {
-                props.items.map(o => {
-                    return (
-                        <option value={o.value}>{o.item}</option>
-                    )
-                })
-            }
-        </select>
+        <div className={s.select}>
+            <select value={value} onChange={(e) => onChangeHandler(e.currentTarget.value)}>
+                {
+                    props.items.map(o => {
+                        return (
+                            <option value={o.value}>{o.item}</option>
+                        )
+                    })
+                }
+            </select>
+        </div>
+
     );
 };
